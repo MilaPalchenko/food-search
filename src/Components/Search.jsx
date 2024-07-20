@@ -1,31 +1,47 @@
 import React, { useEffect, useState } from 'react';
 import "../Styles/test.css"
 
-const URL = 'https://api.spoonacular.com/recipes/findByIngredients'
+const URL = 'https://api.spoonacular.com/recipes/'
 const API_KEY = "5d0c983c19e84ec484f1a59babeaac86";
 
-export default function Search({foodData, setFoodData}) {
-    
+export default function Search({ foodData, setFoodData }) {
+
     const [query, setQuery] = useState("pizza");
 
-    useEffect(() => { 
-        async function fetchFood() { 
-        const res = await fetch(`${URL}complexSearch?query=${query}&apiKey=${API_KEY}`);
-        const data = await res.json();
+    //fix one of the functions here
+    useEffect(() => {
 
-        }
-        async function withIngredients() { 
-            const rest = await fetch(`${URL}?ingredients=${query}&apiKey=${API_KEY}`);
-            const data = await rest.json();
+            // all input is case sensitive for ingredient search. figure out how to format user's input correctly
+
+        // search by query e.g. "pizza" gives pizzas
+        // async function fetchFood() {
+        //     const res = await fetch(`${URL}complexSearch?query=${query}&apiKey=${API_KEY}`);
+        //     const data = await res.json();
+        //     console.log(data.results);
+        //     setFoodData(data.results);
+        // }
+
+        // search by ingredients (has complex recipes)
+        // async function fetchFood() {
+        //     const res = await fetch(`${URL}complexSearch?includeIngredients=${query}&apiKey=${API_KEY}`);
+        //     const data = await res.json();
+        //     console.log(data.results);
+        //     setFoodData(data.results);
+        // }
+        
+        // search by ingredients you have reqiring as few additional ingredients as possible 
+        async function fetchFood() {
+            const res = await fetch(`${URL}findByIngredients?ingredients=${query}&number=2&apiKey=${API_KEY}`);
+            const data = await res.json();
             console.log(data);
             setFoodData(data);
         }
-        withIngredients();
-    }, 
-    [query]); 
-    
+        fetchFood();
+    },
+        [query]);
+
     return (<div>
         <input type="text"
-            value={query} onChange={(e) => setQuery(e.target.value)}/>
+            value={query} onChange={(e) => setQuery(e.target.value)} />
     </div>)
 }
