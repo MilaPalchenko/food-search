@@ -29,8 +29,14 @@ export default function Search({ foodData, setFoodData }) {
         //     setFoodData(data.results);
         // }
         
-        // search by ingredients you have reqiring as few additional ingredients as possible 
+        // search by ingredients you have reqiring as few additional ingredients as possible  !!also limited to showing just 2 results!!
         async function fetchFood() {
+
+            // test the formatting if it works. reached daily quota
+            // and ffs find better api to use than this weird ass 150limits per day -_-
+            const replaced = query;
+            const pattern = /" "/;
+            replaced.replace(pattern, query);
             const res = await fetch(`${URL}findByIngredients?ingredients=${query}&number=2&apiKey=${API_KEY}`);
             const data = await res.json();
             console.log(data);
