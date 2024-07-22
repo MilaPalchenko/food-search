@@ -30,13 +30,11 @@ export default function FoodDetail({ foodId }) {
             <h2>Ingredients</h2>
            <ItemList food={food} isLoading={isLoading}/>
         </div>
-
-        {/* key error here. figure out why it doesn't work */}
         <div>
             <h2>Instructions</h2>
-            {isLoading ? (<p>Loading...</p>) : (food.analyzedInstructions[0].steps.map((step) => (<li key={step.id}>{step.step}</li>)))} 
+
+            {/* breaks the site if ingredients are not listed. figure out how to fix */}
+            {isLoading ? (<p>Loading...</p>) : (food.analyzedInstructions[0].steps.map((step) => (<li key={step.number}>{step.step}</li>)))} 
         </div>
-
     </div>)
-
 }

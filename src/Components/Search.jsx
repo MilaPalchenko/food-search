@@ -34,9 +34,20 @@ export default function Search({ foodData, setFoodData }) {
 
             // test the formatting if it works. reached daily quota
             // and ffs find better api to use than this weird ass 150limits per day -_-
+
+            // !!documentation (?) for it!!
+            // const paragraph = "I think Ruth's dog is cuter than your dog!";
+            // console.log(paragraph.replace("Ruth's", 'my'));
+            // // Expected output: "I think my dog is cuter than your dog!"
+            // const regex = /Dog/i;
+            // console.log(paragraph.replace(regex, 'ferret'));
+            // // Expected output: "I think Ruth's ferret is cuter than your dog!"
+            
             const replaced = query;
             const pattern = /" "/;
             replaced.replace(pattern, query);
+
+
             const res = await fetch(`${URL}findByIngredients?ingredients=${query}&number=2&apiKey=${API_KEY}`);
             const data = await res.json();
             console.log(data);
