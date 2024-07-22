@@ -4,8 +4,22 @@
     padding: 0;
 }
 
+/* to set 1rem = 10px */
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+  }
+
 :root { 
-
-
+    /* main colors */
+    --black: #000;
+    --white: #fff;
+    --off-black: #292929;
+    --off-white: #cfcfcf;
+    --accent-color-green: #55cc72;
+    --accent-color-yellow: #eed359;
+    /* fonts */
+    --main-font: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 

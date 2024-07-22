@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import "../Styles/test.css"
+import "../Styles/style.css"
 
 const URL = 'https://api.spoonacular.com/recipes/'
 const API_KEY = "5d0c983c19e84ec484f1a59babeaac86";
