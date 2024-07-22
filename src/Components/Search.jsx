@@ -43,12 +43,8 @@ export default function Search({ foodData, setFoodData }) {
             // console.log(paragraph.replace(regex, 'ferret'));
             // // Expected output: "I think Ruth's ferret is cuter than your dog!"
             
-            const replaced = query;
-            const pattern = /" "/;
-            replaced.replace(pattern, query);
-
-
-            const res = await fetch(`${URL}findByIngredients?ingredients=${query}&number=2&apiKey=${API_KEY}`);
+            
+            const res = await fetch(`${URL}findByIngredients?ingredients=${query.replace(/ /g, ",")}&number=2&apiKey=${API_KEY}`);
             const data = await res.json();
             console.log(data);
             setFoodData(data);
