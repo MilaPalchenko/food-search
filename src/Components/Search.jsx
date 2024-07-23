@@ -13,7 +13,7 @@ export default function Search({ foodData, setFoodData }) {
 
             // all input is case sensitive for ingredient search. figure out how to format user's input correctly
 
-        // search by query e.g. "pizza" gives pizzas
+        // // search by query e.g. "pizza" gives pizzas
         // async function fetchFood() {
         //     const res = await fetch(`${URL}complexSearch?query=${query}&apiKey=${API_KEY}`);
         //     const data = await res.json();
@@ -21,7 +21,7 @@ export default function Search({ foodData, setFoodData }) {
         //     setFoodData(data.results);
         // }
 
-        // search by ingredients (has complex recipes)
+        // // search by ingredients (has complex recipes)
         // async function fetchFood() {
         //     const res = await fetch(`${URL}complexSearch?includeIngredients=${query}&apiKey=${API_KEY}`);
         //     const data = await res.json();
@@ -44,7 +44,7 @@ export default function Search({ foodData, setFoodData }) {
             // // Expected output: "I think Ruth's ferret is cuter than your dog!"
             
             
-            const res = await fetch(`${URL}findByIngredients?ingredients=${query.replace(/ /g, ",")}&number=1&apiKey=${API_KEY}`);
+            const res = await fetch(`${URL}findByIngredients?ingredients=${query.replace(/ /g, ",")}&number=3&apiKey=${API_KEY}`);
             const data = await res.json();
             console.log(data);
             setFoodData(data);

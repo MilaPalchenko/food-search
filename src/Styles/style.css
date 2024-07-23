@@ -8,6 +8,32 @@ body {
   flex-direction: row;
 }
 
+header {
+  position: sticky;
+  top: 0;
+}
+
+.nav-bar {
+  background-color: var(--accent-color-green);
+  border-bottom: 2px solid var(--off-white);
+  display: flex;
+  height: 50px;
+}
+.nav-bar__wrap {
+  display: flex;
+  flex-direction: row;
+}
+.nav-bar__title {
+  color: var(--white);
+  font-size: 3rem;
+  font-weight: 400;
+  margin: 4px 10px 10px 10px;
+}
+.nav-bar__img {
+  margin-top: 3px;
+  height: 40px;
+}
+
 .input {
   margin: 10px;
 }
@@ -98,7 +124,6 @@ body {
   width: 550px;
 }
 .food-detail__short-info {
-  margin-top: 10px;
   text-align: center;
 }
 .food-detail__readyIn {

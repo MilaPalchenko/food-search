@@ -2,6 +2,7 @@ import FoodItem from "./FoodItem";
 import "../Styles/style.css"
 
 export default function FoodList({ foodData, setFoodId }) {
+    
     return (<div className="food-list">
         {foodData.map((food) => (
 
