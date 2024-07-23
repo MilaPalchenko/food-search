@@ -2,3 +2,148 @@ body {
     background: var(--off-white);
     font-family: var(--main-font);
 }
+
+.page-wrap { 
+    display: flex;
+    flex-direction: row;
+}
+
+.input { 
+    margin: 10px;
+
+    &__wrap { 
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+    &__search { 
+        border: 1px solid var(--accent-color-green);
+        border-radius: 5px;
+        color: var(--off-black);
+        font-size: 2rem;
+        padding: 10px;
+        width: 350px;
+    }
+}
+
+.food-list { 
+    max-width: 600px;
+}
+
+.food-item { 
+    align-items: center;
+    background-color: var(--white);
+    border-radius: 7px;
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.192);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 500px;
+    &__wrap { 
+        margin: 30px;
+        padding: 20px;
+    }
+    &__img { 
+        border-radius: 7px;
+        height: 250px;
+        object-fit: cover;
+        width: 350px;
+    }
+    &__title { 
+        font-family: var(--main-font);
+        font-size: 2.5rem;
+        margin: 10px;
+    }
+    &__btn { 
+        background-color: var(--off-white);
+        border: 1px solid var(--accent-color-green);
+        border-radius: 5px;
+        font-family: var(--main-font);
+        font-size: 1.6rem;
+        padding: 10px;
+    }
+}
+
+.food-detail { 
+    align-items: center;
+    background-color: var(--white);
+    border-radius: 7px;
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.192);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 70%;
+    &__wrap { 
+        margin: 30px;
+        padding: 20px;
+    }
+    &__preview {
+        display: flex;
+        flex-direction: column;
+    }
+    &__title { 
+        font-family: var(--main-font);
+        font-size: 3rem;
+        margin: 10px;
+        text-align: center;
+    }
+    &__img { 
+        border-radius: 7px;
+        height: 330px;
+        margin: auto;
+        margin-bottom: 20px;
+        object-fit: cover;
+        width: 550px;
+    }
+    &__short-info {
+        margin-top: 10px;
+        text-align: center;
+    }
+    &__readyIn { 
+        font-size: 3rem;
+        margin: 10px;
+    }
+    &__dish-type { 
+        font-size: 3rem;
+        font-style: italic;
+        font-weight: 400;
+        margin: auto;
+    }
+    &__ingredients { 
+        border-radius: 7px;
+        box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.192);
+        font-size: 1.6rem;
+        margin: 35px;
+        text-align: center;
+
+        &--title { 
+            margin: 20px;
+            text-align: center;
+        }
+    }
+}
+
+.food-item-list { 
+    background-color: var(--white);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 200px;
+    margin: 20px;
+    width: 600px;
+    &__item {
+        margin-top: 30px;
+    }
+    &__img {
+        height: 70px;
+    }
+    &__name {
+        text-decoration: underline;
+    }
+    &__amount { 
+        font-style: italic;
+        font-weight: 400;
+    }
+    &__unit {
+        font-weight: 400;
+    }
+}

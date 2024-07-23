@@ -44,7 +44,7 @@ export default function Search({ foodData, setFoodData }) {
             // // Expected output: "I think Ruth's ferret is cuter than your dog!"
             
             
-            const res = await fetch(`${URL}findByIngredients?ingredients=${query.replace(/ /g, ",")}&number=2&apiKey=${API_KEY}`);
+            const res = await fetch(`${URL}findByIngredients?ingredients=${query.replace(/ /g, ",")}&number=1&apiKey=${API_KEY}`);
             const data = await res.json();
             console.log(data);
             setFoodData(data);
@@ -53,8 +53,8 @@ export default function Search({ foodData, setFoodData }) {
     },
         [query]);
 
-    return (<div>
-        <input type="text"
+    return (<div className='input input__wrap'>
+        <input className="input input__search" type="text"
             value={query} onChange={(e) => setQuery(e.target.value)} />
     </div>)
 }

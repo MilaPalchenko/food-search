@@ -11,9 +11,11 @@ function App() {
   const [foodId, setFoodId] = useState("641122");
   return (
     <>
-      <Search foodData={foodData} setFoodData={setFoodData}/>
-      <FoodList foodData={foodData} setFoodId={setFoodId}/>
-      <FoodDetail foodId={foodId}/> 
+      <Search foodData={foodData} setFoodData={setFoodData} />
+      <main className="page-wrap">
+        <FoodList foodData={foodData} setFoodId={setFoodId} />
+        <FoodDetail foodId={foodId} />
+      </main>
     </>
   )
 }
