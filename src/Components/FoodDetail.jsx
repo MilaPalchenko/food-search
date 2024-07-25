@@ -29,14 +29,18 @@ export default function FoodDetail({ foodId }) {
                 <strong className="food-detail__dish-type">{food.vegetarian ? "🥕 Vagetarion" : "🍖 Non-Vegetarion"} / {food.vegan ? "🐄 Vegan" : "Non-Vegan"}</strong>
             </div>
         </div>
-        <div className="food-detail__ingredients">
-            <h2 className="food-detail__ingredients--title">Ingredients</h2>
-            <ItemList food={food} isLoading={isLoading} />
-        </div>
-        <div className="food-detail__instructions">
-            <h2>Instructions</h2>
-            {/* breaks the site if ingredients are not listed. figure out how to fix */}
-            {isLoading ? (<p>Loading...</p>) : (food.analyzedInstructions[0].steps.map((step) => (<li key={step.number}>{step.step}</li>)))}
+        <div className="food-detail__info">
+            <div className="food-detail__ingredients">
+                <h2 className="food-detail__ingredients--title">Ingredients</h2>
+                <ItemList food={food} isLoading={isLoading} />
+            </div>
+            <div className="food-detail__instructions">
+                <h2 className="food-detail__instructions--title">Instructions</h2>
+                {/* breaks the site if ingredients are not listed. figure out how to fix */}
+                {isLoading ? (<p>Loading...</p>) : (food.analyzedInstructions[0].steps.map((step) =>
+                (<li key={step.number}
+                    className="food-detail__instructions--steps">{step.step}</li>)))}
+            </div>
         </div>
     </div>)
 }

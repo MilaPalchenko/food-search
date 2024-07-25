@@ -8,7 +8,7 @@ export default function ItemList({ food, isLoading }) {
                 <img className="food-item-list__img" src={`https://spoonacular.com/cdn/ingredients_100x100/` + item.image} alt="" />
                 <h3>
                     <span className="food-item-list__amount"> {item.amount} </span> 
-                    <span className="food-item-list__unit">{item.unit} </span>
+                    <span className="food-item-list__unit">{item.unit} </span> <br />
                     <span className="food-item-list__name">{item.name}</span> 
                     </h3>
             </div>))}

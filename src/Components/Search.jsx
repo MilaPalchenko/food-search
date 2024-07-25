@@ -6,12 +6,10 @@ const API_KEY = "5d0c983c19e84ec484f1a59babeaac86";
 
 export default function Search({ foodData, setFoodData }) {
 
-    const [query, setQuery] = useState("pizza");
+    const [query, setQuery] = useState("chocolate");
 
     //fix one of the functions here
     useEffect(() => {
-
-            // all input is case sensitive for ingredient search. figure out how to format user's input correctly
 
         // // search by query e.g. "pizza" gives pizzas
         // async function fetchFood() {
@@ -44,7 +42,7 @@ export default function Search({ foodData, setFoodData }) {
             // // Expected output: "I think Ruth's ferret is cuter than your dog!"
             
             
-            const res = await fetch(`${URL}findByIngredients?ingredients=${query.replace(/ /g, ",")}&number=3&apiKey=${API_KEY}`);
+            const res = await fetch(`${URL}findByIngredients?ingredients=${query.replace(/ /g, ",")}&number=5&apiKey=${API_KEY}`);
             const data = await res.json();
             console.log(data);
             setFoodData(data);

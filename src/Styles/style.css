@@ -36,6 +36,7 @@ header {
 
 .input {
   margin: 10px;
+  margin-top: 23px;
 }
 .input__wrap {
   align-items: center;
@@ -48,7 +49,7 @@ header {
   color: var(--off-black);
   font-size: 2rem;
   padding: 10px;
-  width: 350px;
+  width: 450px;
 }
 
 .food-list {
@@ -89,6 +90,9 @@ header {
   font-size: 1.6rem;
   padding: 10px;
 }
+.food-item__btn:hover {
+  cursor: pointer;
+}
 
 .food-detail {
   align-items: center;
@@ -97,7 +101,6 @@ header {
   box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.192);
   display: flex;
   flex-direction: column;
-  justify-content: center;
   width: 70%;
 }
 .food-detail__wrap {
@@ -136,6 +139,10 @@ header {
   font-weight: 400;
   margin: auto;
 }
+.food-detail__info {
+  display: flex;
+  justify-content: center;
+}
 .food-detail__ingredients {
   border-radius: 7px;
   box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.192);
@@ -146,23 +153,39 @@ header {
 .food-detail__ingredients--title {
   margin: 20px;
   text-align: center;
+  text-decoration: underline;
+}
+.food-detail__instructions {
+  margin-top: 25px;
+  margin-right: 10px;
+}
+.food-detail__instructions--title {
+  font-size: 2.5rem;
+  margin: 30px 20px 20px 20px;
+}
+.food-detail__instructions--steps {
+  font-size: 1.7rem;
+  line-height: 2.5rem;
+  text-align: justify;
+  margin: 10px;
 }
 
 .food-item-list {
   background-color: var(--white);
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: 200px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 150px;
   margin: 20px;
-  width: 600px;
+  width: 240px;
 }
 .food-item-list__item {
   margin-top: 30px;
 }
 .food-item-list__img {
-  height: 70px;
+  height: 50px;
 }
 .food-item-list__name {
+  font-size: 1.7rem;
   text-decoration: underline;
 }
 .food-item-list__amount {
