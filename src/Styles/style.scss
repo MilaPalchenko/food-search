@@ -3,6 +3,8 @@ body {
     font-family: var(--main-font);
 }
 
+// pc resolution
+
 .page-wrap { 
     display: flex;
     flex-direction: row;
@@ -11,6 +13,15 @@ body {
 header {
     position: sticky;
     top: 0;
+}
+
+#recipe-start { 
+    scroll-margin-top: 70px;
+}
+
+a{
+    color: var(--black);
+    text-decoration: none;
 }
 
 .nav-bar {
@@ -54,9 +65,6 @@ header {
     }
 }
 
-.food-list { 
-    max-width: 600px;
-}
 
 .food-item { 
     align-items: center;
@@ -68,7 +76,7 @@ header {
     justify-content: center;
     max-width: 500px;
     &__wrap { 
-        margin: 30px;
+        margin: 30px 10px 10px 30px;
         padding: 20px;
     }
     &__img { 
@@ -81,6 +89,7 @@ header {
         font-family: var(--main-font);
         font-size: 2.5rem;
         margin: 10px;
+        text-align: center;
     }
     &__btn { 
         background-color: var(--off-white);
@@ -105,7 +114,7 @@ header {
     width: 70%;
 
     &__wrap { 
-        margin: 30px;
+        margin: 30px 30px 10px 30px;;
         padding: 20px;
     }
     &__preview {
@@ -132,6 +141,10 @@ header {
     &__readyIn { 
         font-size: 3rem;
         margin: 10px;
+    }
+    &__servings {
+        font-size: 3rem;
+        font-weight: 400;
     }
     &__dish-type { 
         font-size: 3rem;
@@ -163,12 +176,13 @@ header {
         &--title{
             font-size: 2.5rem;
             margin: 30px 20px 20px 20px;
+            text-decoration: underline;
         }
         &--steps {
             font-size: 1.7rem;
             line-height: 2.5rem;
-            text-align: justify;
             margin: 10px;
+            text-align: justify;
         }
     }
 }
@@ -196,5 +210,119 @@ header {
     }
     &__unit {
         font-weight: 400;
+    }
+}
+
+.test-grid { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+// mobile resolution recipes list
+
+@media screen and (max-width: 1450px) {
+    
+    .page-wrap {
+        flex-direction: column;
+    }
+    .food-item {
+        max-width: 300px;
+        justify-content:flex-start;
+
+        &__wrap {
+            align-items: center;
+        }
+        &__img {
+            width: 250px;
+        }
+
+        &__wrap {
+            margin: 10px;
+        } 
+    }
+ 
+    .wrap-food-list {
+        display: flex;
+        justify-content: center;
+    }
+
+    .food-list {
+        display: grid;
+        justify-content: center;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+
+        // testing
+        .test-grid {
+            display: grid;
+            height: 400px;
+            grid-template-rows: 250px 100px 50px;
+            grid-template-columns: 70px 110px 70px;
+            img {
+                grid-column-start: 1;
+                grid-column-end: 4;
+                grid-row-start: 1;
+                grid-row-end: 2;
+            }
+            h1 {
+                font-size: 2.2rem;
+                grid-column-start: 1;
+                grid-row-start: 2;
+                grid-row-end: 3;
+                text-align: center;
+                width: 230px;
+            }
+            button { 
+                width: 100px;
+                grid-column-start: 2;
+                grid-row-start: 3;
+                margin-left: 5px;
+            }
+        }
+    }
+
+    .food-detail {
+        justify-content: center;
+        width: 95%;
+    }
+}
+
+// pc resolution recipes list
+
+@media screen and (min-width: 1451px){
+    .food-list {
+        display: grid;
+        justify-content: center;
+        grid-template-columns: repeat(2, 1fr);
+        
+         // testing
+         .test-grid {
+            display: grid;
+            height: 400px;
+            grid-template-rows: 250px 100px 50px;
+            grid-template-columns: 100px 100px 100px;
+            width: 300px;
+            img {
+                grid-column-start: 1;
+                grid-column-end: 4;
+                grid-row-start: 1;
+                grid-row-end: 2;
+                width: 300px;
+            }
+            h1 {
+                font-size: 2.2rem;
+                grid-column-start: 1;
+                grid-row-start: 2;
+                grid-row-end: 3;
+                text-align: center;
+                width: 280px;
+            }
+            button { 
+                width: 100px;
+                grid-column-start: 2;
+                grid-row-start: 3;
+            }
+        }
     }
 }

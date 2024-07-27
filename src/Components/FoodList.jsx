@@ -3,7 +3,8 @@ import "../Styles/style.css"
 
 export default function FoodList({ foodData, setFoodId }) {
     
-    return (<div className="food-list">
+    return (<div className="wrap-food-list">
+    <div className="food-list">
         {foodData.map((food) => (
 
             // fix so the container won't disappear while typing
@@ -11,5 +12,5 @@ export default function FoodList({ foodData, setFoodId }) {
                 setFoodId={setFoodId}
                 food={food} />
         ))}
-    </div>)
+    </div></div>)
 }

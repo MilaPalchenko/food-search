@@ -42,7 +42,7 @@ export default function Search({ foodData, setFoodData }) {
             // // Expected output: "I think Ruth's ferret is cuter than your dog!"
             
             
-            const res = await fetch(`${URL}findByIngredients?ingredients=${query.replace(/ /g, ",")}&number=5&apiKey=${API_KEY}`);
+            const res = await fetch(`${URL}findByIngredients?ingredients=${query.replace(/ /g, ",")}&number=6&apiKey=${API_KEY}`);
             const data = await res.json();
             console.log(data);
             setFoodData(data);
