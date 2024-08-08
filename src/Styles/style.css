@@ -256,7 +256,7 @@ a {
     grid-row-end: 2;
   }
   .food-list .test-grid h1 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     grid-column-start: 1;
     grid-row-start: 2;
     grid-row-end: 5;
