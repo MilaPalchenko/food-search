@@ -30,18 +30,6 @@ export default function Search({ foodData, setFoodData }) {
         // search by ingredients you have reqiring as few additional ingredients as possible  !!also limited to showing just 2 results!!
         async function fetchFood() {
 
-            // test the formatting if it works. reached daily quota
-            // and ffs find better api to use than this weird ass 150limits per day -_-
-
-            // !!documentation (?) for it!!
-            // const paragraph = "I think Ruth's dog is cuter than your dog!";
-            // console.log(paragraph.replace("Ruth's", 'my'));
-            // // Expected output: "I think my dog is cuter than your dog!"
-            // const regex = /Dog/i;
-            // console.log(paragraph.replace(regex, 'ferret'));
-            // // Expected output: "I think Ruth's ferret is cuter than your dog!"
-            
-            
             const res = await fetch(`${URL}findByIngredients?ingredients=${query.replace(/ /g, ",")}&number=6&apiKey=${API_KEY}`);
             const data = await res.json();
             console.log(data);

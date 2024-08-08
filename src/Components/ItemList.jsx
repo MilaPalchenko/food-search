@@ -3,6 +3,9 @@ import "../Styles/style.css"
 export default function ItemList({ food, isLoading }) {
 
     return (<div className="food-item-list food-item-list__wrap">
+        
+        {/* block disappears if ingredients are not listed. possibly look for fix later */}
+        
         {isLoading ? (<p>Loading...</p>) : (food.extendedIngredients.map((item, index) =>
         // adding index here creates unique key-id and prevents key-id overlap error from before
         // index shared globally so it would never repeat itself even if used elsewhere for preventing same error

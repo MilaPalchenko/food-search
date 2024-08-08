@@ -8,7 +8,6 @@ export default function FoodDetail({ foodId }) {
     const URL = `https://api.spoonacular.com/recipes/${foodId}/information`
     const API_KEY = "5d0c983c19e84ec484f1a59babeaac86";
 
-    //check if this works correctly esp with `food useState`. ran out of daily quota
     useEffect(() => {
         async function fetchFood() {
             const res = await fetch(`${URL}?apiKey=${API_KEY}`);
@@ -38,7 +37,6 @@ export default function FoodDetail({ foodId }) {
             </div>
             <div className="food-detail__instructions">
                 <h2 className="food-detail__instructions--title">Instructions:</h2>
-                {/* breaks the site if ingredients are not listed. figure out how to fix */}
                 {isLoading ? (<p>Loading...</p>) : (food.analyzedInstructions[0].steps.map((step) =>
                 (<li key={step.number}
                     className="food-detail__instructions--steps">{step.step}</li>)))}
