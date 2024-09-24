@@ -11,7 +11,7 @@ export default function Search({ foodData, setFoodData }) {
     useEffect(() => {
 
         // // block one
-        // // search by query e.g. "pizza" gives pizzas !! you can change number=6 for amount of displayed recipes!!
+        // // search by cuisine e.g. "pizza" gives pizzas !! you can change number=6 for amount of displayed recipes!!
         // async function fetchFood() {
         //     const res = await fetch(`${URL}complexSearch?cuisine=${query.replace(/ /g, ",")}&number=6&apiKey=${API_KEY}`);
         //     const data = await res.json();
