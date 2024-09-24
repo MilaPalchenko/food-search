@@ -213,7 +213,7 @@ a{
     }
 }
 
-.test-grid { 
+.food-item-grid { 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -253,7 +253,7 @@ a{
         grid-template-columns: repeat(2, 1fr);
         gap: 10px;
 
-        .test-grid {
+        .food-item-grid {
             display: grid;
             height: 180px;
             grid-template-rows: 60px 65px 25px;
@@ -358,8 +358,8 @@ a{
         grid-template-columns: repeat(3, 1fr);
         gap: 10px;
 
-        // testing
-        .test-grid {
+        
+        .food-item-grid {
             display: grid;
             height: 400px;
             grid-template-rows: 250px 100px 50px;
@@ -401,8 +401,8 @@ a{
         justify-content: center;
         grid-template-columns: repeat(2, 1fr);
         
-         // testing
-         .test-grid {
+         
+         .food-item-grid {
             display: grid;
             height: 400px;
             grid-template-rows: 250px 100px 50px;

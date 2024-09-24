@@ -2,39 +2,44 @@ import React, { useEffect, useState } from 'react';
 import "../Styles/style.css"
 
 const URL = 'https://api.spoonacular.com/recipes/'
-const API_KEY = "5d0c983c19e84ec484f1a59babeaac86";
+const API_KEY = "PUT_YOUR_API_KEY_HERE";
 
 export default function Search({ foodData, setFoodData }) {
 
     const [query, setQuery] = useState("chocolate");
 
-    //fix one of the functions here
     useEffect(() => {
 
-        // // search by query e.g. "pizza" gives pizzas
+        // // block one
+        // // search by query e.g. "pizza" gives pizzas !! you can change number=6 for amount of displayed recipes!!
         // async function fetchFood() {
-        //     const res = await fetch(`${URL}complexSearch?query=${query}&apiKey=${API_KEY}`);
+        //     const res = await fetch(`${URL}complexSearch?cuisine=${query.replace(/ /g, ",")}&number=6&apiKey=${API_KEY}`);
         //     const data = await res.json();
         //     console.log(data.results);
         //     setFoodData(data.results);
         // }
 
-        // // search by ingredients (has complex recipes)
+        // // block two
+        // // search by ingredients (has complex recipes) !! you can change number=6 for amount of displayed recipes!!
         // async function fetchFood() {
-        //     const res = await fetch(`${URL}complexSearch?includeIngredients=${query}&apiKey=${API_KEY}`);
+        //     const res = await fetch(`${URL}complexSearch?includeIngredients=${query.replace(/ /g, ",")}&number=6&apiKey=${API_KEY}`);
         //     const data = await res.json();
         //     console.log(data.results);
         //     setFoodData(data.results);
         // }
-        
-        // search by ingredients you have reqiring as few additional ingredients as possible  !!also limited to showing just 2 results!!
+
+        // block three
+        // search by ingredients you have reqiring as few additional ingredients as possible  !! you can change number=6 for amount of displayed recipes!!
         async function fetchFood() {
-
             const res = await fetch(`${URL}findByIngredients?ingredients=${query.replace(/ /g, ",")}&number=6&apiKey=${API_KEY}`);
             const data = await res.json();
             console.log(data);
             setFoodData(data);
         }
+
+        // comment out/remove one of the 3 functions from the above
+
+
         fetchFood();
     },
         [query]);
